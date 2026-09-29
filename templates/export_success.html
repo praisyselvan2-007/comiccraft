@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Comic Exported Successfully
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body class="success-page">
+
+
+    <main class="success-card">
+
+
+        <div class="success-icon">
+
+            ✓
+
+        </div>
+
+
+        <h1>
+
+            Comic Exported Successfully!
+
+        </h1>
+
+
+        <p>
+
+            Your AI-powered comic has been
+            successfully created!
+
+        </p>
+
+
+        {% if file %}
+
+        <a
+            class="small-download"
+            href="{{ file }}"
+            download
+        >
+
+            Download PDF
+
+        </a>
+
+        {% endif %}
+
+
+        <a
+            class="small-download"
+            href="/"
+        >
+
+            ↻ Go Create Another Comic
+
+        </a>
+
+
+    </main>
+
+
+</body>
+
+</html>

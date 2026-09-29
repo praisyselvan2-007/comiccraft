@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ComicCraft | AI Comic Generator</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">🎨</div>
+
+        <div>
+            <div class="logo-title">ComicCraft</div>
+            <div class="logo-subtitle">AI COMIC GENERATOR</div>
+        </div>
+    </div>
+
+    <div class="nav-links">
+        <a href="#create">Create</a>
+        <a href="#how">How it works</a>
+        <a href="#about">About</a>
+    </div>
+
+    <button class="nav-button" onclick="scrollToCreate()">
+        ✨ Start Creating
+    </button>
+
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✨ AI POWERED COMIC CREATOR
+        </div>
+
+        <h1>
+            Turn Your Story Into
+            <span>Amazing Comics</span>
+        </h1>
+
+        <p>
+            Create beautiful comic pages from your imagination.
+            Describe your story, characters and style —
+            ComicCraft does the rest.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="primary-button"
+                    onclick="scrollToCreate()">
+                🎨 Create My Comic
+            </button>
+
+            <button class="secondary-button"
+                    onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">
+                ▶ How It Works
+            </button>
+
+        </div>
+
+        <div class="hero-features">
+            <div>
+                <span>✓</span>
+                AI Generated
+            </div>
+
+            <div>
+                <span>✓</span>
+                Custom Characters
+            </div>
+
+            <div>
+                <span>✓</span>
+                Comic Layouts
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-art">
+
+        <div class="comic-preview">
+
+            <div class="comic-title">
+                YOUR STORY
+            </div>
+
+            <div class="comic-grid">
+
+                <div class="comic-panel panel-large">
+                    <div class="speech">
+                        Once upon a time...
+                    </div>
+
+                    <div class="character character-one">
+                        🧑
+                    </div>
+                </div>
+
+                <div class="comic-panel">
+                    <div class="speech small">
+                        Wow!
+                    </div>
+
+                    <div class="character">
+                        👩
+                    </div>
+                </div>
+
+                <div class="comic-panel">
+                    <div class="action-text">
+                        BOOM!
+                    </div>
+
+                    <div class="character">
+                        🦸
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CREATE SECTION -->
+<section class="create-section" id="create">
+
+    <div class="section-heading">
+
+        <div class="section-badge">
+            ✨ CREATE YOUR COMIC
+        </div>
+
+        <h2>
+            Bring Your Imagination
+            <span>To Life</span>
+        </h2>
+
+        <p>
+            Tell us about your story and we'll transform it
+            into a comic page.
+        </p>
+
+    </div>
+
+
+    <div class="generator-card">
+
+        <form id="comicForm">
+
+            <!-- STORY -->
+            <div class="form-group">
+
+                <label>
+                    📖 Story / Scene
+                </label>
+
+                <textarea
+                    id="story"
+                    name="story"
+                    placeholder="Example: Mercy and Jesi discover a mysterious glowing portal in an ancient forest..."
+                    required></textarea>
+
+                <div class="input-hint">
+                    Describe what happens in your comic scene.
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <!-- CHARACTERS -->
+                <div class="form-group">
+
+                    <label>
+                        👥 Characters
+                    </label>
+
+                    <input
+                        type="text"
+                        id="characters"
+                        name="characters"
+                        placeholder="Mercy, Jesi, mysterious wizard">
+
+                    <div class="input-hint">
+                        Who should appear in the comic?
+                    </div>
+
+                </div>
+
+
+                <!-- STYLE -->
+                <div class="form-group">
+
+                    <label>
+                        🎨 Art Style
+                    </label>
+
+                    <select id="style" name="style">
+
+                        <option value="modern-comic">
+                            Modern Comic
+                        </option>
+
+                        <option value="manga">
+                            Manga
+                        </option>
+
+                        <option value="cartoon">
+                            Cartoon
+                        </option>
+
+                        <option value="superhero">
+                            Superhero
+                        </option>
+
+                        <option value="watercolor">
+                            Watercolor
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- PANELS -->
+            <div class="form-group">
+
+                <label>
+                    🖼️ Number of Panels
+                </label>
+
+                <div class="panel-options">
+
+                    <label class="panel-option active">
+                        <input type="radio"
+                               name="panels"
+                               value="3"
+                               checked>
+                        <span>3</span>
+                        Panels
+                    </label>
+
+                    <label class="panel-option">
+                        <input type="radio"
+                               name="panels"
+                               value="4">
+                        <span>4</span>
+                        Panels
+                    </label>
+
+                    <label class="panel-option">
+                        <input type="radio"
+                               name="panels"
+                               value="6">
+                        <span>6</span>
+                        Panels
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+            <button type="submit"
+                    class="generate-button"
+                    id="generateButton">
+
+                <span>✨</span>
+                Generate My Comic
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+
+        <!-- LOADING -->
+        <div id="loading"
+             class="loading"
+             style="display:none">
+
+            <div class="loader"></div>
+
+            <h3>Creating your comic...</h3>
+
+            <p>
+                Our AI is turning your story into panels.
+            </p>
+
+        </div>
+
+
+        <!-- RESULT -->
+        <div id="result"
+             class="result"
+             style="display:none">
+
+            <h3>🎉 Your Comic Is Ready!</h3>
+
+            <div id="comicResult"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+
+    <div class="section-heading">
+
+        <div class="section-badge">
+            HOW IT WORKS
+        </div>
+
+        <h2>
+            From Idea To
+            <span>Comic</span>
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon">
+                💡
+            </div>
+
+            <h3>
+                Describe Your Story
+            </h3>
+
+            <p>
+                Tell ComicCraft what you want
+                your comic to be about.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon">
+                🎨
+            </div>
+
+            <h3>
+                Choose Your Style
+            </h3>
+
+            <p>
+                Select manga, cartoon, superhero
+                or another visual style.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon">
+                ✨
+            </div>
+
+            <h3>
+                Generate Comic
+            </h3>
+
+            <p>
+                AI creates your comic page
+                from your description.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer id="about">
+
+    <div class="footer-logo">
+        🎨 ComicCraft
+    </div>
+
+    <p>
+        Turn imagination into beautiful comics.
+    </p>
+
+    <div class="copyright">
+        © 2026 ComicCraft. AI Comic Generator.
+    </div>
+
+</footer>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
